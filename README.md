@@ -1,337 +1,111 @@
-## EX-02 – Cross-Platform Prompting: Evaluating Diverse Techniques in AI-Powered Text Summarization
-## Name: Sridharan B
-## Reg No: 212225230272
+# EX-02-Cross-Platform-Prompting-Evaluating-Diverse-Techniques-in-AI-Powered-Text-Summarization
+
 ## AIM
-To analyze and compare the performance of various prompting techniques (Zero-Shot, Few-Shot, Chain-of-Thought and Role-Based Prompting) across different AI platforms (ChatGPT, Gemini, Claude AI and Microsoft Copilot) for the purpose of text summarization.
-## Scenario
-You are a member of a content development team for an online learning platform that delivers simplified summaries of research articles to undergraduate students.
-The objective is to summarize a 500-word technical article on "The Basics of Blockchain Technology" using multiple AI platforms and prompting methods.
-The generated summaries are assessed based on these factors:
-- Accuracy
-- Coherence
-- Simplicity
-- Speed
-- User Experience
-## Abstract
-Artificial Intelligence platforms are widely used to summarise technical articles and research papers. However, the quality of a summary depends on both the AI platform and the prompting technique used.
-
-This experiment focuses on summarising a 500-word technical article titled "The Basics of Blockchain Technology" using multiple AI platforms and prompting strategies. Different prompting techniques, including Zero-Shot Prompting, Few-Shot Prompting, Role-Based Prompting and Chain-of-Thought Prompting, are considered.
-
-The generated summaries are evaluated based on five criteria: Accuracy, Coherence, Simplicity, Speed and User Experience.
+To evaluate and compare the effectiveness of prompting techniques (zero-shot, few-shot, chain-of-thought, role-based) across different AI platforms (e.g., ChatGPT, Gemini, Claude, Copilot) in a specific task: text summarization.
 
-The main objective is to identify which combination of AI platform and prompting technique produces the most accurate, clear and student-friendly summary.
-## Objectives
-1. To understand the basics of Blockchain Technology.</br>
-2. To study different AI platforms used for summarisation.</br>
-3. To understand various prompting techniques.</br>
-4. To generate summaries using different AI platforms.</br>
-5. To compare the results based on accuracy, coherence, simplicity, speed and user experience.</br>
-6. To identify the most effective platform and prompting technique.</br>
-7. To understand the importance of prompt engineering in AI-based summarisation.</br>
+## Scenario:
+You are part of a content curation team for an educational platform that delivers quick summaries of research papers to undergraduate students. Your task is to summarize a 500-word technical article on "The Basics of Blockchain Technology" using multiple AI platforms and prompting strategies.
 
-## Introduction
-1. What is Blockchain Technology?</br>
-Blockchain is a decentralised digital ledger technology used to record and store transactions securely across multiple computers in a network.
-Information is stored in groups called blocks. Each block contains transaction data, a timestamp and a cryptographic hash that connects it to the previous block.
-Once a block is validated and added to the blockchain, changing its information becomes extremely difficult because the connected blocks would also need to be altered.</br>
+Your goal is to determine which combination of prompting technique + platform provides the best summary in terms of:
 
-Example: Bitcoin uses blockchain technology to record cryptocurrency transactions without requiring a central bank to maintain the transaction ledger.</br>
+Accuracy
 
-2. Main Features of Blockchain </br>
-1. Decentralisation: Data is maintained across multiple computers rather than one central authority.</br>
-2. Transparency: Participants with appropriate access can verify recorded transactions.</br>
-3. Security: Cryptographic techniques help protect blockchain records.</br>
-4. Immutability: Recorded information is difficult to modify without detection.</br>
-5. Distributed Ledger: Multiple network participants maintain copies of the ledger.</br>
-6. Consensus Mechanism: Network participants follow agreed rules to validate transactions.</br>
-
-3. Blockchain Architecture</br>
+Coherence
 
-<img width="996" height="502" alt="image" src="https://github.com/user-attachments/assets/bb49f9ec-0428-4ac0-aab8-dc410a7b0045" />
-
-Explanation:</br>
-- Each block contains transaction information.</br>
-- Every block has its own cryptographic hash.</br>
-- The previous block's hash connects the blocks.</br>
-- The first block is called the Genesis Block.</br>
-- Multiple computers maintain and verify the distributed ledger.</br>
-4. AI Platforms Used for the Experiment</br>
-The following AI platforms are selected for comparison.</br>
-
-
-## ChatGPT
-Used to generate structured, understandable and detailed summaries of technical articles.</br>
-Website: ChatGPT</br>
-
-## Google Gemini
-Used to summarise technical information and explain complex concepts in simple language.</br>
-Website: Google Gemini</br>
-
-## Claude AI
-
-Used to generate coherent summaries with clear explanations and logical organisation.</br>
-Website: Claude</br>
-
-## Microsoft Copilot
-
-Used to produce concise summaries and simplified explanations.</br>
-Website: Microsoft Copilot</br>
-
-
-## Prompting Techniques Used
-Prompt engineering is the process of designing instructions to guide an AI model towards producing the desired output.
-# 1. Zero-Shot Prompting
-Zero-Shot Prompting means asking an AI model to perform a task without providing any examples.</br>
+Simplicity
 
-Prompt:</br>
+Speed
 
-"Summarise the following 500-word article on Blockchain Technology in 150 words. Use simple English and include the important concepts."</br>
+User experience
 
-Advantages:</br>
-- Easy to use.</br>
-- Requires less preparation.</br>
-- Produces quick results.</br>
-Limitation: The summary may miss some important technical details.</br>
+## Algorithm
+1. **Text Selection:** Obtain a 500-word technical article on "The Basics of Blockchain Technology" to serve as the standard input data.
+2. **Goal Definition:** Identify the target audience (undergraduate students) and the specific requirements (simple, accurate, quick summary).
+3. **Context Priming (Setup):** Feed the 500-word article into the AI model's context window first and assign it a variable name (e.g., "Blockchain_Article") to optimize token usage and avoid redundant pasting.
+4. **Prompt Design:** Construct a progressive series of prompts that reference the variable name, upgrading step-by-step from a "Basic Prompt" up to a highly detailed "Output Format Prompt".
+5. **Execution:** Input the progressive prompts sequentially into the AI models (e.g., ChatGPT, Gemini) to generate the summaries.
+6. **Evaluation & Result Formulation:** Analyze how the addition of personas, context, constraints, and formatting rules changes the behavior of the AI, and document how prompt engineering refines a generic summary into a targeted educational resource.
 
-# 2. Few-Shot Prompting</br>
-Few-Shot Prompting provides a small number of examples to guide the AI model.</br>
-Prompt:</br>
-"Summarise the following article using this example format.</br>
-Example:</br>
-Input: Artificial Intelligence enables machines to perform intelligent tasks.</br>
+## Tools used:
 
-Output: AI allows computers to perform tasks that normally require human intelligence.</br>
+ChatGPT and Gemini
+ 
+## Prompt Designs (Progressive Structure)
 
-Now summarise the article on Blockchain Technology in approximately 150 words using the same simple style and format."</br>
+To avoid redundancy and optimize token usage, we first use **Context Priming** to feed the source text to the AI, assigning it a variable name to be referenced in subsequent prompts.
 
-Advantages:</br>
-- Helps maintain a consistent output format.</br>
-- Provides better guidance.</br>
-- Useful for educational summaries.</br>
-Limitation: Requires additional examples and prompt preparation.</br>
+### 0. The Setup Prompt (Context Priming)
+> **Prompt:** I am going to provide you with a 500-word article. I want you to save this in your context window and remember it as "Blockchain_Article". Do not summarize it or analyze it yet. Just reply with "Ready" if you understand.
 
-# 3. Role-Based Prompting
-Role-Based Prompting assigns a specific role to the AI model before asking it to perform a task.</br>
+The 500-word article is as follows:
 
-Prompt:</br>
+The Basics of Blockchain Technology
 
-"Act as an experienced Computer Science professor. Summarise the following article on Blockchain Technology for second-year engineering students. Explain technical terms in simple English and include the key concepts, advantages and applications."</br>
+At its core, a blockchain is an append-only, cryptographically secured distributed ledger maintained across a peer-to-peer network of computational nodes without relying on a central authority. Unlike traditional centralized databases managed by a single administrator to validate and record state changes, a blockchain establishes verifiable consensus across untrusted network participants using cryptography, distributed systems theory, and economic incentive models.
 
-Advantages:</br>
-- Produces audience-focused explanations.</br>
-- Encourages simple language.</br>
-- Helps organise the content.</br>
-Limitation: Assigning a role does not guarantee factual accuracy.</br>
+Data Architecture and Cryptographic Integrity
+Data within a blockchain is organized into chronologically chained structures called blocks. Each block consists of two primary components: a block header and a block body. The body contains a set of validated transactions, while the header contains essential metadata, including a timestamp, an arbitrary counter called a nonce, a target difficulty threshold, and cryptographic hashes.
 
-# 4. Chain-of-Thought Prompting
-Chain-of-Thought Prompting encourages structured reasoning through intermediate steps. For this summarisation task, ask the model to analyse the main ideas before presenting only the final summary.</br>
+Transactions within a block are hashed hierarchically into a binary tree structure known as a Merkle Tree. The top of this tree—the Merkle Root—serves as a single, fixed-size cryptographic digest representing all transactions within that block. Altering even a single bit in any underlying transaction produces a cascading change in its hash, immediately invalidating the Merkle Root and signaling data corruption.
 
-Prompt:</br>
+Furthermore, each block header explicitly includes the cryptographic hash of the preceding block header. This links individual blocks into an immutable, sequential chain extending back to the initial Genesis Block. Modifying historical data requires an attacker to recalculate the hash of the tampered block and every subsequent block, rendering retroactive data manipulation computationally infeasible.
 
-"Analyse the following article on Blockchain Technology. First identify the main concepts, technical terms, working principles and applications. Check that the important information is preserved. Then provide a concise, well-organised summary in simple English within 150 words."</br>
+Distributed Consensus Mechanisms
+In a decentralized environment lacking a central administrative operator, distributed nodes must reach dynamic, fault-tolerant agreement on the canonical state of the ledger through a cryptographic consensus mechanism.
 
-Advantages:</br>
-- Encourages systematic analysis.</br>
-- Helps organise complex information.</br>
-- Can reduce the chance of omitting important concepts.</br>
-Limitation: May require more processing time and does not automatically guarantee correctness.</br>
+Proof of Work (PoW): Nodes (miners) expend computational energy to solve a cryptographic puzzle—finding a nonce that generates a block hash meeting specific difficulty criteria. PoW secures the network through physical thermodynamic energy expenditure, making history rewrites exponentially cost-prohibitive.
 
-## 5 Comparison of Prompting Techniques
-Technique	Main purpose	Advantage	Limitation
-Zero-Shot	Direct instructions	Fast and simple	Less control
-Few-Shot	Uses examples	Consistent output	Requires examples
-Role-Based	Assigns a role	Audience-focused	Role alone cannot ensure accuracy
-Chain-of-Thought	Structured analysis	Organised output	May take longer
+Proof of Stake (PoS): Nodes (validators) lock up native tokens as economic collateral (stake) for the privilege of proposing and validating new blocks. Malicious behavior or double-signing results in severe financial penalties via the slashing of staked capital.
 
-## 6. Experimental Methodology
+Smart Contracts and State Transition
+Modern blockchains operate as decentralized, globally distributed deterministic state machines. Beyond simple value transfers, advanced networks execute self-contained programs known as smart contracts. Compiled into bytecode and executed inside isolated environments like the Ethereum Virtual Machine (EVM), smart contracts execute automatically when predefined conditions are met. Every full node on the network independently executes the contract logic against its local copy of the state, ensuring identical, deterministic state transitions across all participants.
 
-The experiment follows these steps:
-1. Select a 500-word technical article on Blockchain Technology.
-2. Select four AI platforms.
-3. Prepare four prompting techniques.
-4. Enter the same article into each platform.
-5. Apply the selected prompts.
-6. Collect the generated summaries.
-7. Evaluate the outputs using five evaluation criteria.
-8. Compare the results.
-9. Identify the best-performing combination.
+Conclusion and Future Outlook
+Blockchain technology fundamentally transforms data verification by replacing implicit trust in central intermediaries with explicit cryptographic proof and algorithmic consensus. Through the combined application of cryptographic hashing, Merkle trees, peer-to-peer propagation, and game-theoretic incentives, blockchains establish a tamper-resistant foundation for decentralized systems, transparent supply chains, and digital ownership. As modern scaling technologies like zero-knowledge rollups mature, blockchain architectures continue to redefine distributed computing.
 
-<img width="773" height="590" alt="image" src="https://github.com/user-attachments/assets/7e24ceb5-52ed-4776-8b0f-3177f9dbdf7c" />
 
-6.2 Experimental Design
-Parameter	Description
-Input	500-word blockchain article
-AI platforms	ChatGPT, Gemini, Claude, Copilot
-Prompting methods	Zero-Shot, Few-Shot, Role-Based, Chain-of-Thought
-Output	Approximately 150-word summary
-Evaluation	Five quality criteria
-Final objective	Select the best platform and prompt combination
+### 1. Basic Prompt (Zero-Shot)
+> **Prompt:** Summarize the "Blockchain_Article".
+* **What it does:** The AI provides a generic, zero-shot summary. The output is usually a dense paragraph that might still contain too much technical jargon, as the AI doesn't know *who* the summary is for.
 
-A fair comparison requires using the same article, equivalent instructions, similar output length and consistent evaluation standards.
-## 7. Sample Input Article
-Title: The Basics of Blockchain Technology
+### 2. Role Prompt
+> **Prompt:** Act as a technical content curator for an educational platform. Summarize the "Blockchain_Article".
+* **What it does:** By assigning a role, the AI shifts its tone. The summary becomes slightly more professional and structured, mimicking how an educator or curator might write.
 
-Blockchain is a distributed digital ledger technology that stores information in a secure and transparent manner. It consists of a series of blocks connected using cryptographic hashes. Each block contains transaction data, a timestamp and the hash of the previous block.
+### 3. Context Prompt
+> **Prompt:** We are creating content for an educational platform that delivers quick summaries of research papers to undergraduate students. They need to grasp complex technical topics easily. Summarize the "Blockchain_Article".
+* **What it does:** The AI now understands the *audience*. It automatically simplifies the vocabulary, uses better analogies, and focuses on the high-level concepts rather than deep cryptographic mathematics.
 
-Unlike traditional databases, blockchain does not depend on a single central authority. Instead, information is maintained across multiple computers called nodes. Every participant in the network can maintain a copy of the ledger.
+### 4. Constraint Prompt
+> **Prompt:** We are creating content for an educational platform that delivers quick summaries to undergraduate students. Summarize the "Blockchain_Article". **Constraints:** Keep the summary strictly under 100 words and do not use overly technical jargon. 
+* **What it does:** This forces the AI to be concise. It strips away all filler words and non-essential background information, ensuring the student can read it quickly without getting overwhelmed.
 
-Blockchain uses consensus mechanisms such as Proof of Work (PoW) and Proof of Stake (PoS) to validate transactions and maintain agreement among network participants. Cryptography protects transaction records and helps prevent unauthorised changes.
+### 5. Final Upgraded Prompt (Output Format)
+> **Prompt:** Act as an expert content curator for an educational platform. We provide quick summaries of technical research papers to undergraduate students. Summarize the "Blockchain_Article".
 
-Smart contracts are programs stored on a blockchain that automatically execute predefined conditions. They are useful in applications such as financial services, supply chain management and digital agreements.
+> **Constraints:** Keep the total length under 150 words, ensure high accuracy, and simplify the concepts so a college freshman can understand them.
 
-Blockchain technology is widely used in cryptocurrencies such as Bitcoin and Ethereum. It also supports applications in healthcare, banking, logistics and identity management.
+> **Format:** Output the summary using exactly 3 bullet points with a bold heading for each point.
 
-The major advantages of blockchain include decentralisation, transparency, security and traceability. However, it also has limitations such as scalability challenges, energy consumption in some consensus systems, regulatory uncertainty and implementation costs.
+* **What it does:** This creates the ultimate, ready-to-publish output. It combines the simplified tone for undergraduates, the strict length constraint for quick reading, and a highly scannable bulleted format.
+  
 
-Blockchain technology continues to develop and has the potential to improve the security, efficiency and transparency of digital transactions.
-## 8. Sample Generated Summary
-The following is an example of the expected summary format.
+## Final Comparison & Analysis 
 
-The Basics of Blockchain Technology – Summary
+Based on the outputs generated across the five progressive prompts, here is the comparative analysis between ChatGPT and Gemini for the text summarization task:
 
-Blockchain is a decentralised digital ledger that stores transaction information in connected blocks. Each block contains transaction data, a timestamp and a cryptographic hash linking it to the previous block. Multiple computers called nodes maintain copies of the ledger, reducing dependence on a central authority.
+| Evaluation Criteria | ChatGPT Performance | Gemini Performance |
+| :--- | :--- | :--- |
+| **Accuracy** | Consistently maintained the core technical truths of the blockchain article across all prompt variations without hallucinating details. | Highly accurate; successfully retained the technical meaning even when forced to simplify the vocabulary. |
+| **Coherence** | Summaries flowed smoothly. In the final prompt, the bullet points read like a cohesive, well-structured educational narrative. | Summaries were highly direct and punchy. Slightly more fragmented in the bulleted format, but extremely easy to read. |
+| **Simplicity** | Adapted perfectly to the "Context Prompt" (Prompt 3), successfully stripping out heavy cryptographic jargon for the undergraduate audience. | Excelled at simplifying complex terms, providing very clear, layman-friendly explanations suitable for a college freshman. |
+| **Speed** | Generated the progressive summaries quickly, though slightly slower when calculating the strict constraints of the final prompt. | Noticeably faster generation time across all 5 prompts, delivering the constrained summaries almost instantaneously. |
+| **User Experience** | Followed the strict formatting of Prompt 5 (exactly 3 bullets, bold headings, under 150 words) perfectly on the first try, yielding a publish-ready result. | Followed the constraints well but included slight conversational filler (e.g., "Here is your summary:") which required minor manual editing. |
 
-Blockchain uses consensus mechanisms such as Proof of Work and Proof of Stake to validate transactions. Smart contracts automatically execute predefined conditions. Its applications include cryptocurrency, banking, healthcare and supply chain management.
+## Result
 
-The main advantages of blockchain are security, transparency, decentralisation and traceability. However, it faces challenges such as scalability, energy consumption in some systems, regulatory uncertainty and implementation 
+The experiment successfully demonstrated how upgrading a prompt from a basic instruction to a heavily constrained format significantly improves the AI's utility. 
 
+A Basic Prompt yielded a technically accurate but dense summary. However, by sequentially upgrading the prompt—adding a specific **Role**, providing audience **Context**, enforcing length **Constraints**, and defining a strict **Output Format**—the outputs from both models were completely transformed into highly tailored educational resources. 
 
-## 9. Evaluation Criteria
-The generated summaries are evaluated using the following five criteria.
-9.1 Accuracy
-Measures whether the summary correctly represents the original article without introducing false information.
-9.2 Coherence
-Measures whether the summary is logically organised and the sentences connect smoothly.
-9.3 Simplicity
-Measures whether undergraduate students can understand the summary easily.
-9.4 Speed
-Measures how quickly the AI platform generates the requested summary.
-9.5 User Experience
-Measures the ease of interacting with the AI platform, including its interface, readability and usefulness.
-
-
-
-<img width="1007" height="517" alt="image" src="https://github.com/user-attachments/assets/59d55358-5fec-4825-aae3-46be5e7dbd7c" />
-
-## 10. Comparative Analysis of AI Platforms
-The following table provides an illustrative evaluation for the experiment. These are example assessment scores, not actual measured benchmark results. Replace them with scores from your own platform tests.
-
-Scoring scale: 1 = Poor, 2 = Average, 3 = Good, 4 = Very Good, 5 = Excellent.
-Evaluation criteria	ChatGPT	Gemini	Claude	Copilot
-Accuracy	5	4	5	4
-Coherence	5	4	5	4
-Simplicity	5	5	5	4
-Speed	4	5	4	5
-User Experience	5	4	5	4
-Total	24	22	24	25
-
-
-10.2 Analysis
-- ChatGPT: Provides structured explanations and simple technical summaries.
-- Gemini: Useful for quick summaries and straightforward explanations.
-- Claude: Can produce well-organised summaries with coherent writing.
-- Copilot: Provides convenient summarisation and integration with Microsoft's ecosystem.
-Based on the illustrative scores, ChatGPT and Claude receive the highest overall scores.
-11. Comparative Analysis of Prompting Techniques
-The following are illustrative scores for the prompting strategies.
-Criteria	Zero-Shot	Few-Shot	Role-Based	Chain-of-Thought
-Accuracy	4	4	4	5
-Coherence	3	5	5	5
-Simplicity	4	5	5	4
-Speed	5	3	4	3
-User Experience	4	4	5	4
-Total	20	21	23	21
-
-11.1 Visual Comparison Chart
-Prompting Technique Comparison
-Illustrative scores out of 25.
-
-
-06.2512.518.7525Zero-ShotFew-ShotRole-BasedChain-of-Thought
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Figure 6: Comparison of prompting techniques based on total evaluation scores.
-11.2 Analysis
-- Zero-Shot Prompting is suitable for quick summarisation.
-- Few-Shot Prompting helps maintain consistent structure and style.
-- Role-Based Prompting is effective for producing student-friendly explanations.
-- Chain-of-Thought Prompting encourages systematic analysis but can take more time.
-Based on the illustrative scores, Role-Based Prompting performs best overall.
-12. Best Combination of Platform and Prompting Technique
-Based on the example evaluations, the recommended combination is:
-Illustrative recommendation
-
-
-
-Reasons:
-- Provides well-structured summaries.
-- Explains technical concepts in simple English.
-- Supports audience-specific instructions.
-- Helps maintain clarity and logical organisation.
-- Offers a convenient conversational interface.
-
-## Recommended Final Prompt
-"Act as an experienced Computer Science professor and educational content writer. Read the following 500-word technical article on Blockchain Technology and prepare a concise summary of approximately 150 words for undergraduate engineering students.
-
-Include the definition, working principle, important components, key features, applications, advantages and limitations.
-
-Use simple English, short sentences and technically accurate explanations. Preserve all important facts from the original article. Do not add information that is not supported by the article. Organise the summary logically and make it easy for students to understand and revise."
-12.1 Recommended Evaluation Process
-To establish the actual best combination, test the four prompting techniques on all four platforms using the same input article.
-
-This gives 16 experimental combinations.
-
-
-
-## 13. Advantages of AI-Based Article Summarisation
-1. Saves time when reading lengthy research papers.
-2. Helps students understand technical topics.
-3. Extracts important information.
-4. Improves learning and revision.
-5. Makes complex information easier to understand.
-6. Supports different summary formats.
-7. Improves productivity in educational platforms.
-14. Limitations and Challenges
-1. AI may generate incorrect information.
-2. Important technical details may be omitted.
-3. Different platforms may produce different results.
-4. Some prompts may generate unnecessarily long summaries.
-5. Response speed depends on the model and network conditions.
-6. AI may misunderstand technical terminology.
-7. Human verification is necessary before publishing summaries.
-15. Future Improvements
-1. Develop automated evaluation systems for summary accuracy.
-2. Use domain-specific prompts for technical subjects.
-3. Combine AI summarisation with fact-checking tools.
-4. Support summaries in multiple languages.
-5. Generate diagrams automatically from technical articles.
-6. Develop personalised summaries for different student levels.
-7. Use human feedback to improve educational content.
-## 16. Conclusion
-This experiment demonstrates the importance of selecting suitable AI platforms and prompting techniques for summarising technical research articles.
-
-Four AI platforms, namely ChatGPT, Gemini, Claude and Microsoft Copilot, were considered along with four prompting strategies: Zero-Shot, Few-Shot, Role-Based and Chain-of-Thought Prompting.
-
-The summaries were evaluated using five criteria: Accuracy, Coherence, Simplicity, Speed and User Experience.
-
-The illustrative evaluation indicates that ChatGPT and Claude achieve the highest platform scores, while Role-Based Prompting achieves the highest prompting-technique score.
-
-Therefore, ChatGPT combined with Role-Based Prompting is selected as the recommended starting combination for generating simple, structured and student-friendly blockchain summaries. However, the final winner must be confirmed through actual testing of all 16 combinations using identical conditions.
-
-The experiment highlights that prompt engineering plays an important role in improving the usefulness of Generative AI in educational content creation.
-## 17. Result
-The comparative study of AI platforms and prompting techniques for summarising "The Basics of Blockchain Technology" was completed.Different prompting methods and AI platforms were examined, and their performance was compared based on accuracy, coherence, simplicity, speed and user experience.
-
-The study identified ChatGPT with Role-Based Prompting as the recommended combination based on the illustrative evaluation. The experiment demonstrates how appropriate prompt design can improve AI-generated educational summaries.
+Overall, while Gemini provided faster generation speeds, ChatGPT provided a slightly superior **User Experience** by adhering flawlessly to the strict formatting and length constraints of the Final Upgraded Prompt without adding unnecessary conversational filler.
